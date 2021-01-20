@@ -1,0 +1,22 @@
+{
+  "name": "frontendmentor_loopstudios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanfloresf/frontendmentor_loopstudios.git"
+  },
+  "author": "Esteban Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estebanfloresf/frontendmentor_loopstudios/issues"
+  },
+  "homepage": "https://github.com/estebanfloresf/frontendmentor_loopstudios#readme",
+  "devDependencies": {
+    "sass": "^1.32.4"
+  }
+}
