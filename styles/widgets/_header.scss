@@ -1,53 +1,147 @@
-.header{
-    background-image: url("/images/mobile/image-hero.jpg");
+.header {
+  background-image: url("/images/mobile/image-hero.jpg");
+  width: 100%;
+  height: 100%;
+  max-height: 45em;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 1em;
+}
+
+.header__nav--mobile {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: flex-start;
+  height: 100%;
+  flex-direction: column;
+}
+
+.nav__logo {
+  background-image: url("/images/logo.svg");
+  width: 10em;
+  height: 1.5em;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain;
+  max-width: 50%;
+  position: absolute;
+  top: 2em;
+  z-index: 5;
+  left: 1em;
+}
+
+.nav-menu {
+  width: 3em;
+}
+.dropdown {
+  position: absolute;
+  right: 1em;
+  top: 1.5em;
+  z-index: 5;
+}
+
+input[type="checkbox"] + label {
+  .icon-bar {
+    display: block;
+    width: 2em;
+    height: 0.05em;
+    background-color: #cccccc;
+    margin: 0.5em;
+    transition: all 0.4s ease-in-out;
+  }
+  .top-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+    transition: all 0.1s;
+  }
+  .bottom-bar {
+    opacity: 1;
+  }
+}
+.nav__menu_collapse {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+input.input-box[type="checkbox"]:checked ~ .nav__menu_collapse {
+  visibility: visible;
+}
+
+.nav__menu_collapse {
+  height: 100vh;
+  width: 100vw;
+  background: $black;
+  z-index: 2;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+.nav__menu_collapse__items {
+  color: $white;
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  padding: 2em;
+  li {
+    font-family: $font-secondary;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    padding: 0.35em 0;
+  }
+}
+
+.nav__menu__content {
+  width: 100%;
+  height: auto;
+  padding: 0.4em;
+  font-size: 3em;
+  border: 3px solid $white;
+  color: $white;
+  font-family: $font-secondary;
+  word-break: break-word;
+
+  h3 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+  }
+}
+
+@include mq($from: tablet) {
+  .header {
+    background-image: url("/images/desktop/image-hero.jpg");
     width: 100%;
     height: 100%;
-    max-height: 75em;
+    max-height: 35em;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; 
+    background-size: cover;
     display: flex;
-    flex-direction: column;   
-    padding: 5em 1em;
-}
-
-.header__nav--mobile{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
-
-.nav__logo{
-    background-image: url("/images/logo.svg");
-    width: 25em;
-    height: 5em;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: contain; 
-}
-.nav__menu{
-    background-image: url("/images/icon-hamburger.svg");
-    width: 5em;
-    height: 3em;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: contain; 
-}
-
-
-
-@include mq($from: tablet){
-    .header{
-        background-image: url("/images/desktop/image-hero.jpg");
-        width: 100%;
-        height: 100%;
-        max-height: 75em;
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; 
-        display: flex;
-        flex-direction: column;   
-        padding: 8em;
-    }
+    flex-direction: column;
+  }
+  .header__nav--mobile {
+    display: none;
+  }
 }
