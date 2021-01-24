@@ -18,5 +18,8 @@
   "homepage": "https://github.com/estebanfloresf/frontendmentor_loopstudios#readme",
   "devDependencies": {
     "sass": "^1.32.4"
+  },
+  "dependencies": {
+    "sass-mq": "^5.0.1"
   }
 }
