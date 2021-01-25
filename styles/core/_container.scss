@@ -2,4 +2,22 @@ html,
 body {
   font-family: $font-primary;
   font-size: 1em;
+  overflow-x: hidden;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.full-width {
+  width: 100vw;
+}
+
+@include mq($from: tablet) {
+  .content {
+    position: relative;
+  }
 }
