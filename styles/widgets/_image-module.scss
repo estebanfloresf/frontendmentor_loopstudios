@@ -1,0 +1,59 @@
+.image-module__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 5em auto;
+  height: auto;
+  padding: 1em;
+}
+
+.image-module__image {
+  width: 100%;
+}
+.image-module__content {
+  background: $white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.image-module__content h3 {
+  font-size: 2em;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  padding: 0.5em 0;
+}
+
+.image-module__content p {
+  color: $gray;
+  line-height: 1.6em;
+  padding: 0 0.5em;
+}
+
+@include mq($from: tablet) {
+  .image-module__container {
+    align-items: center;
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 100px;
+  }
+  .image-module__image {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row: 1;
+  }
+  .image-module__content {
+    text-align: left;
+    grid-column: 3/5;
+    grid-row: 1;
+    z-index: 2;
+  }
+}
+
+@include mq($from: desktop) {
+  .image-module__container {
+    column-gap: 200px;
+    align-items: end;
+  }
+  .image-module__content {
+    padding: 2em 3.5em 0;
+  }
+}
